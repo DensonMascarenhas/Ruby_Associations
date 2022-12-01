@@ -1,0 +1,32 @@
+<div class="container" style="margin-top:20px;" >
+<nav class="navbar bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="<%= root_path %>">
+     <img src="<%= asset_url('logo.png') %>" alt="Logo" width="45" height=40"" class="d-inline-block align-text-top">
+      BOOK APP
+    </a>
+    <%= link_to "Add new Book", new_book_path, {class: "btn btn-outline-primary"} %>
+  </div>
+</nav>
+<div class="text-success">
+  <hr>
+</div>
+
+<div class="container" >
+<div class="text-center">
+  <img src="<%= asset_url('book1.jpg') %>" alt="crypt">
+  <div class="card-body" style="margin-top:20px;">
+    <h5 class="card-title"><%= @author.name.upcase%></h5>
+    <p class="card-text">Description about author comes here. Currently that field is not available.</p>
+    <a href="<%= book_path(@author) %>" class="btn btn-primary position-relative">View Books
+    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+    <%= @author.books.count%>
+    <span class="visually-hidden">Books</span>
+  </span>
+  </a>
+  </div>
+</div>
+
+
+</div>
+</div>

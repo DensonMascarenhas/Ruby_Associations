@@ -1,0 +1,31 @@
+<div class="container" style="margin-top:20px;" >
+<nav class="navbar bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="<%= root_path %>">
+     <img src="<%= asset_url('logo.png') %>" alt="Logo" width="45" height=40"" class="d-inline-block align-text-top">
+      BOOK APP
+    </a>
+    <%#= link_to "Create New Book", new_book_path, {class: "btn btn-outline-primary"} %>
+  </div>
+</nav>
+<div class="text-success">
+  <hr>
+</div>
+
+<div class="container" >
+<% @book.each do |b|%>
+<div class="card text-center"style="margin-top:20px;" >
+  <div class="card-header">
+ <h5 class="card-title"><%= b.name.upcase%></h5>
+  </div>
+  <div class="card-body">
+    <p class="card-text"><strong>Description:</strong> <%=b.descr %></p>
+  </div>
+
+</div>
+
+<% end%>
+
+</div>
+
+</div>
